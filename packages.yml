@@ -1,0 +1,8 @@
+## https://hub.getdbt.com/
+
+packages:
+  - package: dbt-labs/codegen
+    version: [">=0.9.0", "<0.10.0"]
+
+  - package: dbt-labs/dbt_utils
+    version: [">=1.0.0", "<2.0.0"]
