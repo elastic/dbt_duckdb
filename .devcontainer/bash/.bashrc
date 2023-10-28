@@ -34,4 +34,4 @@ alias init='terraform init'
 alias plan='terraform plan -no-color >> tfplan.txt'
 
 # home
-cd /workspaces/dbt/transformation
+cd /workspaces/dbt_duckdb/transformation

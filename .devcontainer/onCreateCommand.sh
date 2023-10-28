@@ -15,7 +15,7 @@ echo ""
 sleep .5
 
 # check for dbt packages
-if [ ! -d "/workspaces/dbt/transformation/dbt_packages" ]; then
+if [ ! -d "/workspaces/dbt_duckdb/transformation/dbt_packages" ]; then
     echo -e "${YELLOW}Installing dbt Packages...${ENDC} ☕☕☕"
     echo ""
     sleep .5

@@ -1,5 +1,5 @@
 {
-    "name": "elastic/dbt",
+    "name": "elastic/dbt_duckdb",
     "build": {
         "dockerfile": "Dockerfile",
         "context": ".."
@@ -8,26 +8,18 @@
     "containerEnv": {
         "HOSTNAME": "elastic"
     },
-    "features": {
-        "ghcr.io/dhoeric/features/google-cloud-cli:1": {},
-        "ghcr.io/devcontainers/features/terraform:1": {}
-    },
+    "features": {},
     "customizations": {
         "vscode": {
             "extensions": [
                 // theme and remote tools
                 "dracula-theme.theme-dracula",
                 "ms-vscode.remote-explorer",
-                "github.vscode-pull-request-github",
                 "github.copilot",
-                "github.vscode-github-actions",
                 // dbt
                 "butchland.vscode-dbt-bigquery-power-user",
                 "ms-python.python",
                 "ms-python.vscode-pylance",
-                // terraform
-                "hashicorp.terraform",
-                "hashicorp.hcl"
             ],
             "settings": {
                 "terminal.integrated.defaultProfile.linux": "bash",
@@ -61,11 +53,5 @@
         "-i",
         "-c",
         "chmod +x .devcontainer/onCreateCommand.sh && .devcontainer/onCreateCommand.sh"
-    ],
-    "postAttachCommand": [
-        "/bin/bash",
-        "-i",
-        "-c",
-        "chmod +x ../.devcontainer/postAttachCommand.sh && ../.devcontainer/postAttachCommand.sh"
     ]
 }
