@@ -1,40 +1,71 @@
 {
+    "name": "elastic/dbt",
     "build": {
         "dockerfile": "Dockerfile",
         "context": ".."
+        
+    },
+    "containerEnv": {
+        "HOSTNAME": "elastic"
+    },
+    "features": {
+        "ghcr.io/dhoeric/features/google-cloud-cli:1": {},
+        "ghcr.io/devcontainers/features/terraform:1": {}
     },
     "customizations": {
         "vscode": {
+            "extensions": [
+                // theme and remote tools
+                "dracula-theme.theme-dracula",
+                "ms-vscode.remote-explorer",
+                "github.vscode-pull-request-github",
+                "github.copilot",
+                "github.vscode-github-actions",
+                // dbt
+                "butchland.vscode-dbt-bigquery-power-user",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                // terraform
+                "hashicorp.terraform",
+                "hashicorp.hcl"
+            ],
             "settings": {
-                "github.codespaces.createCodespaceInNewWindow": false,
+                "terminal.integrated.defaultProfile.linux": "bash",
                 "git.enableSmartCommit": true,
                 "git.autofetch": true,
                 "git.confirmSync": false,
                 "editor.minimap.enabled": false,
-                "workbench.colorTheme": "SynthWave '84",
-                "synthwave84.disableGlow": false,
+                "workbench.colorTheme": "Dracula",
                 "[jinja-sql]": {
                     "editor.defaultFormatter": "henriblancke.vscode-dbt-formatter"
                 },
                 "files.associations": {
                     "*.sql": "jinja-sql",
-                    "*.yml": "yaml"
+                    "*.yaml": "jinja-yaml",
+                    "*.yml": "jinja-yaml"
                 },
                 "editor.quickSuggestions": {
-                "strings": true
+                    "strings": true
                 },
-            },
-            "extensions": [
-                "GitHub.vscode-pull-request-github",
-                "GitHub.vscode-github-actions",
-                "GitHub.remotehub",
-                "fivetran.dbt-language-server",
-                "henriblancke.vscode-dbt-formatter",
-                "robbowen.synthwave-vscode"
-            ]
+                "github.copilot.enable": {
+                    "*": true,
+                    "yaml": true,
+                    "plaintext": false,
+                    "markdown": false
+                }
+            }
         }
     },
-        "postAttachCommand": {
-          "chmod": "python ./_startup.py && source ~/.bashrc"
-        }
-    }
+    "onCreateCommand": [
+        "/bin/bash",
+        "-i",
+        "-c",
+        "chmod +x .devcontainer/onCreateCommand.sh && .devcontainer/onCreateCommand.sh"
+    ],
+    "postAttachCommand": [
+        "/bin/bash",
+        "-i",
+        "-c",
+        "chmod +x ../.devcontainer/postAttachCommand.sh && ../.devcontainer/postAttachCommand.sh"
+    ]
+}

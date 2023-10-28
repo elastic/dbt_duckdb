@@ -4,7 +4,7 @@
 config:
     send_anonymous_usage_stats: False
 
-dbt_sqlite:
+dbt_duckdb:
   target: dev
   outputs:
     dev:
