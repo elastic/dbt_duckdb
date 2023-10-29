@@ -6,6 +6,6 @@ config:
 
 dbt_duckdb:
   outputs:
-    dev:
+    default:
       type: duckdb
       path: '../data/db.duckdb'
