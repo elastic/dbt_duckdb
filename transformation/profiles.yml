@@ -5,27 +5,7 @@ config:
     send_anonymous_usage_stats: False
 
 dbt_duckdb:
-  target: dev
   outputs:
     dev:
-      type: sqlite
-      threads: 1
-      database: 'database'
-      schema: 'main'
-      schemas_and_paths:
-        main: '.sqlite/data.db'
-      schema_directory: '.sqlite/schema'
-      #optional fields
-      extensions:
-        - ".sqlite/sqlean/crypto.so"
-        - ".sqlite/sqlean/define.so"
-        - ".sqlite/sqlean/fuzzy.so"
-        - ".sqlite/sqlean/ipaddr.so"
-        - ".sqlite/sqlean/json1.so"
-        - ".sqlite/sqlean/math.so"
-        - ".sqlite/sqlean/regexp.so"
-        - ".sqlite/sqlean/stats.so"
-        - ".sqlite/sqlean/text.so"
-        - ".sqlite/sqlean/unicode.so"
-        - ".sqlite/sqlean/uuid.so"
-        - ".sqlite/sqlean/vsv.so"
+      type: duckdb
+      path: '../data/db.duckdb'
