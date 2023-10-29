@@ -9,4 +9,6 @@ default:
     dev:
       type: duckdb
       path: '../data/db.duckdb'
+      extensions:
+        - icu
   target: dev
