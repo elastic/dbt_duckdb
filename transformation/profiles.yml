@@ -4,8 +4,9 @@
 config:
     send_anonymous_usage_stats: False
 
-dbt_duckdb:
+default:
   outputs:
-    default:
+    dev:
       type: duckdb
       path: '../data/db.duckdb'
+  target: dev
