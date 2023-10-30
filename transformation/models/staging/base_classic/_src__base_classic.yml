@@ -3,12 +3,13 @@ version: 2
 sources:
   - name: classic_models
     database: dbt
-    schema: main
+    schema: raw
     tables:
       - name: account
       - name: campaign
       - name: case
       - name: case_history_2
+      - name: contact
       - name: lead
       - name: opportunity
       - name: opportunity_history
