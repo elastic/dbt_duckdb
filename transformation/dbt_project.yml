@@ -4,9 +4,6 @@ config-version: 2
 
 profile: 'default'
 
-vars:
-    "dbt_date:time_zone": "America/Los_Angeles"
-
 model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
@@ -22,4 +19,22 @@ clean-targets:
 
 models:
   elastic_dbt_duckdb:
+    business_vault:
+      +materialized: table
+      +database: dbt
+      +schema: data_vault
+    marts:
+      +materialized: table
+      +database: dbt
+      +schema: data_mart
+    raw_vault:
+      +materialized: table
+      +database: dbt
+      +schema: data_vault
+    staging:
+      +materialized: view
+      +database: dbt
+      +schema: stage
 
+vars:
+  "dbt_date:time_zone": "America/Los_Angeles"
