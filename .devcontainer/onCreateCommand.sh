@@ -29,9 +29,9 @@ fi
 # setup terminal
 apt update -y
 apt install dos2unix wget unzip -y --no-install-recommends
-wget https://github.com/duckdb/duckdb/releases/download/v0.9.1/duckdb_cli-windows-amd64.zip 
-unzip duckdb_cli-linux-amd64.zip -d /usr/local/bin 
-rm duckdb_cli-linux-amd64.zip
+wget https://github.com/duckdb/duckdb/releases/download/v0.9.1/duckdb_cli-linux-amd64.zip --directory-prefix="/root/"
+unzip -o /root/duckdb_cli-linux-amd64.zip -d /usr/local/bin
+rm /root/duckdb_cli-linux-amd64.zip
 pip install -r ./transformation/requirements.txt
 find .devcontainer/ -type f -print0 | xargs -0 dos2unix
 cp .devcontainer/bash/.bashrc ~/.bashrc
