@@ -1,3 +1,8 @@
+# duckdb
+.open
+.open.wal
+dbt.duckdb.wal
+
 target/
 dbt_packages/
 dbt-env/
