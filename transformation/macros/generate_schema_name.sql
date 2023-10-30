@@ -1,16 +1,14 @@
-{% macro generate_schema_name(custom_schema_name=none, node=none) %}
+{% macro generate_schema_name(custom_schema_name, node) -%}
+
     {%- set default_schema = target.schema -%}
-    {%- if target.name == 'dev' or target.name == 'default' -%}
-        {%- if custom_schema_name is none -%}
-            {{ default_schema | trim | upper }}
-        {%- else -%}
-            {{ default_schema | trim | upper }}_{{ custom_schema_name | trim | upper }}
-        {%- endif -%}
+    {%- if custom_schema_name is none -%}
+
+        {{ default_schema }}
+
     {%- else -%}
-        {%- if custom_schema_name is none -%}
-            {{ default_schema | trim | upper }}
-        {%- else -%}
-            {{ custom_schema_name | trim | upper }}
-        {%- endif -%}
+
+        {{ custom_schema_name | trim }}
+
     {%- endif -%}
-{% endmacro %}
+
+{%- endmacro %}
