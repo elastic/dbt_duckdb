@@ -8,7 +8,7 @@ default:
   outputs:
     dev:
       type: duckdb
-      path: '../data/db.duckdb'
+      path: '../dbt.duckdb'
       extensions:
         - icu
   target: dev

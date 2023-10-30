@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: classic_models
+    meta:
+      external_location: "../data/"
+    database: db
+    schema: main
+    tables:
+      - name: account
