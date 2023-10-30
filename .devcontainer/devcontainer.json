@@ -19,8 +19,7 @@
                 // dbt
                 "butchland.vscode-dbt-bigquery-power-user",
                 "ms-python.python",
-                "ms-python.vscode-pylance",
-                "randomfractalsinc.duckdb-sql-tools"
+                "ms-python.vscode-pylance"
             ],
             "settings": {
                 "terminal.integrated.defaultProfile.linux": "bash",

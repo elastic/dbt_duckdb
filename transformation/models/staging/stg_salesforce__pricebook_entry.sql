@@ -2,7 +2,7 @@
 
 with source as (
 
-    select * from {{ source('classic_models', 'pricebook_entry') }}
+    select * from {{ source('salesforce', 'pricebook_entry') }}
 
 ),
 

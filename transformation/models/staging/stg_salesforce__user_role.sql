@@ -1,7 +1,7 @@
 
 with source as (
 
-    select * from {{ source('classic_models', 'user_role') }}
+    select * from {{ source('salesforce', 'user_role') }}
 
 ),
 

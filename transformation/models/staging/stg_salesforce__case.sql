@@ -2,7 +2,7 @@
 
 with source as (
 
-    select * from {{ source('classic_models', 'case') }}
+    select * from {{ source('salesforce', 'case') }}
 
 ),
 

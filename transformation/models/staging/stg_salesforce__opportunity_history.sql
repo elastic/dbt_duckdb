@@ -2,7 +2,7 @@
 
 with source as (
 
-    select * from {{ source('classic_models', 'opportunity_history') }}
+    select * from {{ source('salesforce', 'opportunity_history') }}
 
 ),
 

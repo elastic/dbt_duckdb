@@ -1,6 +1,6 @@
 with source as (
 
-    select * from {{ source('classic_models', 'contact') }}
+    select * from {{ source('salesforce', 'contact') }}
 
 ),
 
